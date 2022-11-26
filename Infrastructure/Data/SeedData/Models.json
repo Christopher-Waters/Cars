@@ -1,0 +1,32 @@
+[
+    {
+      "Id": 1,
+      "Name": "Tahoe",
+      "Year": 2022,
+      "MakeId": 1
+    },
+    {
+      "Id": 2,
+      "Name": "Silverado",
+      "Year": 2022,
+      "MakeId": 1
+    },
+    {
+      "Id": 3,
+      "Name": "Charger",
+      "Year": 2022,
+      "MakeId": 2
+    },
+    {
+      "Id": 4,
+      "Name": "Charger",
+      "Year": 2021,
+      "MakeId": 2
+    },
+    {
+      "Id": 5,
+      "Name": "Mustang",
+      "Year": 2022,
+      "MakeId": 3
+    }
+  ]

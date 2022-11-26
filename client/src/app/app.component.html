@@ -1,0 +1,29 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+<h1>Welcome to {{title}}</h1>
+
+<form [formGroup]="carForm" (ngSubmit)="onSubmit()">
+<div class="col-md-3 mb-3">
+    <select #autos (change)="onSelected(autos.value)" class="form-control" id="carSelect">
+        <option default>Choose a car</option>
+        <option *ngFor="let car of cars" value={{car.id}}>{{car.make}} {{car.name}} {{car.year}}</option>
+      </select>
+</div>
+
+  <app-text-input formControlName="make" [label]="'Make'"></app-text-input>
+  <app-text-input formControlName="name" [label]="'Model'"></app-text-input>
+  <app-text-input formControlName="year" [label]="'Year'"></app-text-input>
+
+  <ul class="text-danger list-unstyled" *ngIf="modelErrors">
+    <li *ngFor="let error of errors">
+      {{error}}
+  </li>
+</ul>
+<ul class="text-danger list-unstyled" *ngIf="singleErrors">
+  <li>
+    {{singleErrors.message}}
+</li>
+</ul>
+<button [disabled]="carForm.invalid" class = "btn btn-primary mt-3">Submit</button>
+</form>
+</div>

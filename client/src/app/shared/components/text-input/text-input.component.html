@@ -1,0 +1,18 @@
+<div class="form-group mt-3 col-6">
+    <label for="{{label}}" class="control-label">{{label}}</label>
+    <input 
+        [ngClass]="(controlDir?.control?.touched) 
+            ? !controlDir.control.valid ? 'is-invalid' : 'is-valid' : null"
+        [type]="type"
+        (input)="onChange($event.target.value)"
+        (blur)="onTouched()"
+        class="form-control" 
+        id="{{label}}" 
+        #input
+        placeholder="{{label}}" 
+        >
+        <div class="invalid-feedback" *ngIf="(!controlDir?.control?.valid && controlDir?.control?.touched)">
+            <span *ngIf="controlDir.control.errors?.required">{{label}} is required</span>
+            <span *ngIf="controlDir.control.errors?.pattern">Year must be numeric and 4 digits</span>
+        </div>
+</div>
